@@ -28,7 +28,8 @@ curl "http://localhost:8123/?user=${CLICKHOUSE_USER}&password=${CLICKHOUSE_PASSW
 
 ### Datalens
 
-[DataLens](https://datalens.yandex.cloud/?skipPromo=true&utm_referrer=https%3A%2F%2Fdatalens.yandex.cloud%2F)
+[DataLens main page](https://datalens.yandex.cloud/)
+[ClickHouse connection doc](https://yandex.cloud/ru/docs/datalens/operations/connection/create-clickhouse)
 
 
 - Use 8123 port for connection 
