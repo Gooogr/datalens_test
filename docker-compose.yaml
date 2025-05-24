@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    env_file:
+      - .env
+    ports:
+      - "8123:8123"   # HTTP interface
+      - "9000:9000"   # Native TCP protocol
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./docker/clickhouse/init:/docker-entrypoint-initdb.d
+    environment:
+      - CLICKHOUSE_DB=$CLICKHOUSE_DB
+      - CLICKHOUSE_USER=$CLICKHOUSE_USER
+      - CLICKHOUSE_PASSWORD=$CLICKHOUSE_PASSWORD
+
+volumes:
+  clickhouse_data:
